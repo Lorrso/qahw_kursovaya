@@ -175,7 +175,7 @@ public class ShopTest {
     @Test
     void shouldGetErrorNotificationWhenSubmitsFormWithOwnersNameWithSpecialChars() {
         var expectedText = "Неверный формат";
-        var invalidOwner = getValidCard().getCardOwner() + "!№;%:?*";
+        var invalidOwner = getValidCard().getCardOwner() + "!№;%:?*()";
         card = getCardWithInvalidCardOwner(invalidOwner);
         shopPage.fillingForm(card);
         shopPage.verifyErrorNotificationVisibility(expectedText);
